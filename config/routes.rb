@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get 'link', to: 'welcome#link'
   get 'test', to: 'welcome#test'
+  resources :articles
 end
