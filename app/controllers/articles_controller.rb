@@ -10,8 +10,9 @@ def new
 end
 
 def create
-#  render plain: params[:article].inspect
+# render plain: params[:article].inspect
   @article = Article.new(article_params)
+  @article.user = User.first
   if @article.save
     flash[:success] = "Article was created successfully"
     redirect_to article_path(@article)
@@ -27,6 +28,8 @@ def edit
 end
 
 def update
+  #debugger
+  @article.user = User.first
   if @article.update(article_params)
     flash[:success] = "Article was updated successfully"
     redirect_to article_path(@article)
