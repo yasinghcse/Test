@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get 'link', to: 'welcome#link'
   get 'test', to: 'welcome#test'
   resources :articles
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end
