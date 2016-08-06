@@ -55,7 +55,7 @@ def article_params
   params.require(:article).permit(:title, :description)
 end
 def require_same_user
-   if current_user != @article.user
+   if current_user != @article.user && !current_user.admin?
       flash[:danger] = "You can only edit or delete your articles"
       redirect_to root_path
    end

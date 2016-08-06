@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :articles
+  has_many :articles, dependent: :destroy
   # create user unique and mandatory
   # create email unique and mandatory
   # validate email using regex
