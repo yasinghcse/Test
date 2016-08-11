@@ -1,9 +1,14 @@
 require 'test_helper'
 
 class CreateCategoriesTest < ActionDispatch::IntegrationTest
+def setup
+    @user = User.create(username: "test", email: "test@gmail.com", password: "password", admin: true)
+  end
 
 #test the creation of a new category
   test "get new category form and create category" do
+    #use a method to virtual sign in and define the method in test_helper.rb
+    sign_in_as(@user,"password")
     #go to the new page to create a category
     get new_category_path
     #load the template
@@ -20,6 +25,7 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
 
 #test failiure scenario for the creation of a new category
   test "failure for create category" do
+    sign_in_as(@user,"password")
     get new_category_path
     assert_template 'categories/new'
     #pass if no entry is created by the post method
