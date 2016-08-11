@@ -20,6 +20,8 @@ gem 'coffee-rails', '~> 4.2'
 #-------this gem is for storing encrypt password ---------
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'rails-controller-testing'
+
 #-------this gem id for pagination --------
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
