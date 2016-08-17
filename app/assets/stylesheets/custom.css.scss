@@ -96,3 +96,15 @@ $navbar-default-bg: #084B8A;
   list-style: none;
   padding-left: 5px;
 }
+
+.badge{
+  background-color: #CEF6F5;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#some time required for setting the correct radio button correctly
+.input_checkbox input{
+  width: auto !important;
+}

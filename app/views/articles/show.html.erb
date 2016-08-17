@@ -14,6 +14,9 @@
 </ul>
 <% end %>
   <h4 class ="description" align ="center"> <strong>Description : </strong></h4><hr>
+  <% if @article.categories.any? %>
+    <p>Catgories: <%= render @article.categories %></p>
+  <% end %>
   <div align="center" class ="description-text"><%= simple_format(@article.description) %></div><br>
   <div class="article-actions" align="Center">
     <% if logged_in? && (current_user == @article.user || current_user.admin? )%>
