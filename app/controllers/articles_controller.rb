@@ -31,7 +31,7 @@ end
 
 def update
   #debugger
-  @article.user = current_user
+  #@article.user = current_user
   if @article.update(article_params)
     flash[:success] = "Article was updated successfully"
     redirect_to article_path(@article)
